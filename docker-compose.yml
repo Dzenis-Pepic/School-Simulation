@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+
+  flask:
+    build: C:\Users\Admin\Desktop\projekat
+    container_name: projekat
+    restart: always
+    environment:
+      - APP_NAME=MyFlaskApp
+    expose:
+      - 8080

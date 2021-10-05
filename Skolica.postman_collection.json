@@ -1,0 +1,583 @@
+{
+	"info": {
+		"_postman_id": "0c29860f-8caf-4109-955c-6cc9e0b08e12",
+		"name": "Skolica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "my courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/teacher_courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher_courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"geometrija\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/add_course",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"add_course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatecourse",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"analiticka geometrija\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/update_course/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"update_course",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/delete_course/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"delete_course",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add student to the course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"course\":\"biologija\",\r\n\"email\":\"student6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/add_student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"add_student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oni koji pohadjaju aktivno moj kurs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"hemija\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/aktivni",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aktivni"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oni koji su zavrsili moj kurs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"biologija\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/neaktivni",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"neaktivni"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "promeni status studenta",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"student6@gmail.com\",\r\n\"name\":\"biologija\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/promena_statusa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"promena_statusa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pristigli zahtevi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "prihvati zahtev",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "moji kursevi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/student_courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student_courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kursevi koje ne pohadjam",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/not_student_courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"not_student_courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oceni",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "url",
+								"value": "{{url}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"analiticka geometrija\",\r\n\"ocena\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/oceni",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oceni"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "posalji zahtev",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "url",
+						"value": "{{url}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"student7\",\r\n    \"last_name\":\"pstudent7\",\r\n    \"email\":\"student7@gmail.com\",\r\n    \"password\":\"sifra\", \r\n    \"role_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all courses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "url",
+						"value": "{{url}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/all_courses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"all_courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "student2",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "sifra",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "index",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "url",
+						"value": "{{url}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n   \r\n    \"first_name\": \"student1\",\r\n    \"last_name\": \"pstudent1\",\r\n    \"password\": \"sifra\",\r\n    \"role_id\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sve ocene",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
